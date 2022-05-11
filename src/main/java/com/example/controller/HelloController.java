@@ -1,6 +1,18 @@
-package com.example.controller;/**
+package com.example.controller;
+
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
+import reactor.core.publisher.Mono;
+
+/**
  * @author liaowei
- * @date 2022/5/11 12:23:00
  * @version V1.0
- */public class HelloController {
+ * @date 2022/5/11 12:23:00
+ */
+@RestController
+public class HelloController {
+    @GetMapping("/")
+    public Mono<String> sayHello() {
+        return Mono.just("Hello World!");
+    }
 }
